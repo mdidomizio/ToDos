@@ -21,7 +21,7 @@ class ToDosAdapter: RecyclerView.Adapter<ToDosAdapter.ToDosViewHolder>() {
         }
     }
     private val differ = AsyncListDiffer(this, diffCallback)
-    var todos: List<ToDos>
+    var toDos: List<ToDos>
         get() = differ.currentList
         set(value) {differ.submitList(value)}
 
@@ -37,9 +37,9 @@ class ToDosAdapter: RecyclerView.Adapter<ToDosAdapter.ToDosViewHolder>() {
 
     override fun onBindViewHolder(holder: ToDosViewHolder, position: Int) {
         holder.binding.apply {
-            val toDos = todos[position]
-            tvTitle.text = toDos.title
-            cbDone.isChecked = toDos.completed
+            val toDo = toDos[position]
+            tvTitle.text = toDo.title
+            cbDone.isChecked = toDo.completed
         }
     }
 }
