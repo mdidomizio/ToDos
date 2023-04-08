@@ -25,7 +25,7 @@ class ToDosAdapter: RecyclerView.Adapter<ToDosAdapter.ToDosViewHolder>() {
         get() = differ.currentList
         set(value) {differ.submitList(value)}
 
-    override fun getItemCount() = todos.size
+    override fun getItemCount() = toDos.size
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ToDosViewHolder {
         return ToDosViewHolder(ItemTodosBinding.inflate(
